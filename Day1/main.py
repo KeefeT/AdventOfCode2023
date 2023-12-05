@@ -2,7 +2,7 @@
 import re
 
 def main():
-    file = open("input.txt", "r")
+    file = open("test.txt", "r")
 
     line = file.readline()
     temp = ""
