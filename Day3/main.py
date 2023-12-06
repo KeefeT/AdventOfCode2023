@@ -15,9 +15,7 @@ def main():
     for num in nums:
         sum += num
 
-    print(nums)
     print(sum)
-        
 
     file.close()
 
@@ -52,7 +50,9 @@ def check_adjacent(arr):
             if touched:
                 nums_to_sum.append(int(num))
             num = ''
-            touched = False
+
+        touched = False
+        isTouching = False
 
     return nums_to_sum
 
@@ -62,7 +62,7 @@ def calculateTouching(x, y, arr):
     isTouching = False
 
     try:
-        isTouching = (arr[y-1][x].isdigit() == False and arr[y-1][x] != '.')
+        isTouching = (arr[y-1][x].isdigit() == False and arr[y-1][x] != '.' and arr[y-1][x] != '\n')
     except:
         None
 
@@ -70,7 +70,7 @@ def calculateTouching(x, y, arr):
         return isTouching
 
     try:
-        isTouching = (arr[y-1][x-1].isdigit() == False and arr[y-1][x-1] != '.')
+        isTouching = (arr[y-1][x-1].isdigit() == False and arr[y-1][x-1] != '.' and arr[y-1][x-1] != '\n')
     except:
         None
 
@@ -78,7 +78,7 @@ def calculateTouching(x, y, arr):
         return isTouching
 
     try:
-        isTouching = (arr[y-1][x+1].isdigit() == False and arr[y-1][x+1] != '.')
+        isTouching = (arr[y-1][x+1].isdigit() == False and arr[y-1][x+1] != '.' and arr[y-1][x+1] != '\n')
     except:
         None
 
@@ -86,7 +86,7 @@ def calculateTouching(x, y, arr):
         return isTouching
 
     try:
-        isTouching = (arr[y+1][x].isdigit() == False and arr[y+1][x] != '.')
+        isTouching = (arr[y+1][x].isdigit() == False and arr[y+1][x] != '.' and arr[y+1][x] != '\n')
     except:
         None
 
@@ -94,7 +94,7 @@ def calculateTouching(x, y, arr):
         return isTouching
 
     try:
-        isTouching = (arr[y+1][x-1].isdigit() == False and arr[y+1][x-1] != '.')
+        isTouching = (arr[y+1][x-1].isdigit() == False and arr[y+1][x-1] != '.' and arr[y+1][x-1] != '\n')
     except:
         None
 
@@ -102,7 +102,7 @@ def calculateTouching(x, y, arr):
         return isTouching
 
     try:
-        isTouching = (arr[y+1][x+1].isdigit() == False and arr[y+1][x+1] != '.')
+        isTouching = (arr[y+1][x+1].isdigit() == False and arr[y+1][x+1] != '.' and arr[y+1][x+1] != '\n')
     except:
         None
 
@@ -110,7 +110,7 @@ def calculateTouching(x, y, arr):
         return isTouching
 
     try:
-        isTouching = (arr[y][x+1].isdigit() == False and arr[y][x+1] != '.')
+        isTouching = (arr[y][x+1].isdigit() == False and arr[y][x+1] != '.' and arr[y][x+1] != '\n')
     except:
         None
 
@@ -118,7 +118,7 @@ def calculateTouching(x, y, arr):
         return isTouching
 
     try:
-        isTouching = (arr[y][x-1].isdigit() == False and arr[y][x-1] != '.')
+        isTouching = (arr[y][x-1].isdigit() == False and arr[y][x-1] != '.' and arr[y][x-1] != '\n')
     except:
         None
 
